@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 -->
 <?jelly escape-by-default='false'?>
-<j:jelly xmlns:j="jelly:core">
-    <!-- no footer element in default login theme -->
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler">
+    <j:if test="${it.useDefaultTheme}">
+        <st:include class="jenkins.model.DefaultSimplePageDecorator" page="simple-footer.jelly" optional="true" />
+    </j:if>
     ${it.footer}
 </j:jelly>
